@@ -14,8 +14,8 @@ export default function HeroBlobsBackground() {
       if (!canvas || !ctx) return;
       const dpr = window.devicePixelRatio || 1;
       if (!(canvas && canvas.offsetWidth && canvas.offsetHeight)) return;
-      (canvas as HTMLCanvasElement).width = (canvas as HTMLCanvasElement).offsetWidth * dpr;
-      (canvas as HTMLCanvasElement).height = (canvas as HTMLCanvasElement).offsetHeight * dpr;
+      canvas!.width = canvas!.offsetWidth * dpr;
+      canvas!.height = canvas!.offsetHeight * dpr;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
     }
