@@ -11,6 +11,7 @@ export default function HeroBlobsBackground() {
     if (!ctx) return;
 
     function setCanvasSize() {
+      if (!canvas || !ctx) return;
       const dpr = window.devicePixelRatio || 1;
       canvas.width = canvas.offsetWidth * dpr;
       canvas.height = canvas.offsetHeight * dpr;
@@ -43,6 +44,7 @@ export default function HeroBlobsBackground() {
     }));
 
     function animate() {
+      if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "#f3f4f6";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
