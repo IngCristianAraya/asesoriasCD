@@ -12,10 +12,11 @@ export default function HeroBlobsBackground() {
 
     function setCanvasSize() {
       if (!canvas || !ctx) return;
+      const safeCanvas = canvas;
       const dpr = window.devicePixelRatio || 1;
-      if (!(canvas && canvas.offsetWidth && canvas.offsetHeight)) return;
-      canvas!.width = canvas!.offsetWidth * dpr;
-      canvas!.height = canvas!.offsetHeight * dpr;
+      if (!(safeCanvas.offsetWidth && safeCanvas.offsetHeight)) return;
+      safeCanvas.width = safeCanvas.offsetWidth * dpr;
+      safeCanvas.height = safeCanvas.offsetHeight * dpr;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
     }
